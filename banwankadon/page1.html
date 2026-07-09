@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ข่าวสารโรงเรียน</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#33CCFF,#3366FF,#3300CC);
+}
+
+/* เมนู */
+#menuBtn{
+    position:fixed;
+    top:20px;
+    left:20px;
+    font-size:35px;
+    color:white;
+    cursor:pointer;
+    background:rgba(0,0,0,.35);
+    padding:10px 15px;
+    border-radius:10px;
+    z-index:1001;
+    transition:.3s;
+}
+
+#menuBtn:hover{
+    background:#3366FF;
+}
+
+#sidebar{
+    position:fixed;
+    top:0;
+    left:-270px;
+    width:250px;
+    height:100%;
+    background:linear-gradient(180deg,#1b3cff,#4d6cff,#7f4dff);
+    transition:.35s;
+    box-shadow:5px 0 15px rgba(0,0,0,.4);
+    padding-top:80px;
+    z-index:1000;
+}
+
+#sidebar.active{
+    left:0;
+}
+
+#sidebar h2{
+    color:white;
+    text-align:center;
+}
+
+#sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:18px 25px;
+    font-size:22px;
+    transition:.3s;
+}
+
+#sidebar a:hover{
+    background:white;
+    color:#3366FF;
+    padding-left:40px;
+}
+
+/* กล่องข่าว */
+.h{
+    width:400px;
+    height:800px;
+    background:white;
+    border:3px solid black;
+    border-radius:10px;
+    padding:20px;
+    box-shadow:0 5px 10px rgba(0,0,0,.3);
+    margin-top: 140px;
+    margin-left: 35px;
+}
+
+.Bb{
+    width:400px;
+    height:500px;
+    background:white;
+    border:3px solid black;
+    border-radius:10px;
+    padding:20px;
+    margin:35px;
+    box-shadow:0 5px 10px rgba(0,0,0,.3);
+}
+
+.title{
+    font-size:27px;
+    margin:0;
+}
+
+.newsimg{
+    width:400px;
+    margin-top:30px;
+    border-radius:10px;
+}
+
+.followBtn{
+    width:100%;
+    height:50px;
+    margin-top:20px;
+    font-size:20px;
+    border:none;
+    border-radius:10px;
+    background:#3366FF;
+    color:white;
+    cursor:pointer;
+}
+
+.followBtn:hover{
+    background:#264de4;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<div id="menuBtn" onclick="toggleMenu()">☰</div>
+
+<div id="sidebar">
+    <h2>📚 เมนู</h2>
+
+    <a href="index.html">🏠 หน้าแรก</a>
+    <a href="page1.html">📰 ข่าวสาร</a>
+    <a href="page7.html">📷 รูปภาพ</a>
+    <a href="page2.html">📞 ช่องทางต่างๆ</a>
+    <a href="page3.html">💎สนับสนุนคนทำเว็บ</a>
+</div>
+<div class="h">
+
+<h2 class="title">พิธีทบทวนคำปฏิญาณและสวนสนาม</h2>
+
+<img class="newsimg"
+src="https://raw.githubusercontent.com/jubjibphudtaraksa-cell/Ban-war/da8bc349b5209dc789878dd46a2bb5069a5b6437/FB_IMG_1783415489359.jpeg">
+
+<button class="followBtn"
+onclick="window.open('https://www.facebook.com/117NSN?','_blank')">
+ติดตามเพจโรงเรียน
+</button>
+
+</div>
+
+<div class="Bb">
+
+<h2 class="title">วันต่อต้านยาเสพติด</h2>
+
+<img class="newsimg"
+style="height:300px;"
+src="https://raw.githubusercontent.com/jubjibphudtaraksa-cell/Ban-war/f881e60449f0fc8c914942de15dec8aa2b3b7590/FB_IMG_1783416997527.jpeg">
+
+</div>
+
+<div style="height:1000px;"></div>
+
+<script>
+function toggleMenu(){
+    document.getElementById("sidebar").classList.toggle("active");
+}
+
+document.addEventListener("click",function(e){
+    const sidebar=document.getElementById("sidebar");
+    const btn=document.getElementById("menuBtn");
+
+    if(!sidebar.contains(e.target) && !btn.contains(e.target)){
+        sidebar.classList.remove("active");
+    }
+});
+</script>
+
+</body>
+</html>
